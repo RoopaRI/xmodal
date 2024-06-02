@@ -19,7 +19,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!email.match(emailRegex)) {
-            alert("Invalid email. Please check your email address.");
+            alert("Invalid email");
             return;
         }
 
