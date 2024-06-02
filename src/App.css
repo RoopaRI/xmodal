@@ -1,9 +1,12 @@
 .App{
     text-align: center;
     display: block;
-    padding:30px;
     margin:auto;
     
+}
+
+h1{
+    margin:0;
 }
 
 .modal {
