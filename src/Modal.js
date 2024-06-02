@@ -62,9 +62,9 @@ const Modal = ({ isOpen, onClose, children }) => {
                         onChange={(e)=>setEmail(e.target.value)}
                         required
                     />
-                    <label htmlFor="phoneno">Phone No:</label>
+                    <label htmlFor="phone">Phone No:</label>
                     <input 
-                        id="phoneno"
+                        id="phone"
                         type="tel"
                         name="number"
                         value={phoneNo}
@@ -74,7 +74,7 @@ const Modal = ({ isOpen, onClose, children }) => {
                     <label htmlFor="dob">Date of Birth:</label>
                     <input 
                         id="dob"
-                        type="date"
+                        type="dob"
                         name="date"
                         value={dob}
                         onChange={(e)=>setDOB(e.target.value)}
