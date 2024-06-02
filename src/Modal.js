@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose }) => {
@@ -6,6 +6,8 @@ const Modal = ({ isOpen, onClose }) => {
     const [email, setEmail] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
     const [dob, setDOB] = useState("");
+
+    if(!isOpen) return null;
 
     const handleContentClick = (event) => {
         event.stopPropagation();
