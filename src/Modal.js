@@ -1,18 +1,17 @@
-import React, {useState} from "react";
-import "./Modal.css"
- 
-const Modal = ({ isOpen, onClose, children }) => {
+import React, { useState } from "react";
+import "./Modal.css";
+
+const Modal = ({ isOpen, onClose }) => {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
     const [dob, setDOB] = useState("");
 
-
     if (!isOpen) return null;
 
     const handleContentClick = (event) => {
-        event.stopPropagation(); //To stop the event bubbling up to the parent element
-    }
+        event.stopPropagation();
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +22,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             return;
         }
 
-        if(phoneNo.length !== 10){
+        if (phoneNo.length !== 10) {
             window.alert("Invalid phone number");
             return;
         }
@@ -35,49 +34,49 @@ const Modal = ({ isOpen, onClose, children }) => {
             return;
         }
 
-        onClose(); //If all the validations pass, close the modal
+        // If all validations pass, close the modal
+        onClose();
     };
- 
+
     return (
         <div onClick={onClose} className="modal">
-            <div className="modal-content" onClick={handleContentClick}> 
-                {/* {children} */}
+            <div className="modal-content" onClick={handleContentClick}>
                 <h1>Fill Details</h1>
-                <form onClick={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="username">Username:</label>
-                    <input 
+                    <input
                         id="username"
                         type="text"
                         name="text"
                         value={userName}
-                        onChange={(e)=>setUserName(e.target.value)}
+                        onChange={(e) => setUserName(e.target.value)}
                         required
                     />
                     <label htmlFor="email">Email Address:</label>
-                    <input 
+                    <input
                         id="email"
                         type="email"
                         name="email"
                         value={email}
-                        onChange={(e)=>setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                     <label htmlFor="phone">Phone No:</label>
-                    <input 
+                    <input
                         id="phone"
                         type="tel"
                         name="number"
                         value={phoneNo}
-                        onChange={(e)=>setPhoneNo(e.target.value)}
+                        onChange={(e) => setPhoneNo(e.target.value)}
                         required
                     />
                     <label htmlFor="dob">Date of Birth:</label>
-                    <input 
+                    <input
                         id="dob"
-                        type="dob"
+                        type="date"
                         name="date"
                         value={dob}
-                        onChange={(e)=>setDOB(e.target.value)}
+                        onChange={(e) => setDOB(e.target.value)}
                         required
                     />
                     <button type="submit" className="submit-button">Submit</button>
@@ -86,5 +85,5 @@ const Modal = ({ isOpen, onClose, children }) => {
         </div>
     );
 };
- 
+
 export default Modal;
