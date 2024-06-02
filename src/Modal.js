@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose }) => {
@@ -7,7 +7,18 @@ const Modal = ({ isOpen, onClose }) => {
     const [phoneNo, setPhoneNo] = useState("");
     const [dob, setDOB] = useState("");
 
-    if (!isOpen) return null;
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (isOpen && !event.target.closest(".modal-content")) {
+                onClose();
+            }
+        };
+
+        document.addEventListener("click", handleOutsideClick);
+        return () => {
+            document.removeEventListener("click", handleOutsideClick);
+        };
+    }, [isOpen, onClose]);
 
     const handleContentClick = (event) => {
         event.stopPropagation();
