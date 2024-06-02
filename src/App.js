@@ -50,11 +50,11 @@ export default function App() {
     };
 
     return (
-        <div className="App">
-            <h1>User Details Modal</h1>
+        <div className="App" style={{minHeight:"100vh"}}>
+            <h1 onClick={handleClose}>User Details Modal</h1>
             <button type="button" onClick={handleOpen}>Open Form</button>
             {open && (
-                <div onClick={handleClose} className="modal">
+                <div  className="modal">
                     <div className="modal-content" onClick={handleContentClick}>
                         <h1>Fill Details</h1>
                         <form onSubmit={handleSubmit}>
