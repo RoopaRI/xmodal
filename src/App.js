@@ -10,6 +10,10 @@ export default function App() {
 
     const handleClose = () => {
         setOpen(false);
+        setUserName("");
+        setEmail("");
+        setPhoneNo("");
+        setDOB("");
     };
 
     const handleOpen = () => {
