@@ -24,14 +24,14 @@ const Modal = ({ isOpen, onClose, children }) => {
         }
 
         if(phoneNo.length !== 10){
-            window.alert("Invalid phone number. Please enter a 10-digit phone number");
+            window.alert("Invalid phone number");
             return;
         }
 
         const currentDate = new Date();
         const selectedDate = new Date(dob);
         if (selectedDate > currentDate) {
-            alert("Date of Birth cannot be a future date.");
+            alert("Invalid date of birth");
             return;
         }
 
