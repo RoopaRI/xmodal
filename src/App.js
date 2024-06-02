@@ -50,7 +50,7 @@ export default function App() {
     };
 
     return (
-        <div id="root" className="App" style={{minHeight:"100vh"}}>
+        <div className="App">
             <h1>User Details Modal</h1>
             <button type="button" onClick={handleOpen}>Open Form</button>
             {open && (
